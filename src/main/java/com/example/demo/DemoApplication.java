@@ -42,6 +42,11 @@ public class DemoApplication {
 
             // update the student
             studentRepository.save(student);
+
+            studentRepository.findAllWithCourse().stream().forEach(student1 -> {
+                System.out.println(student1.getName());
+                System.out.println(student1.getCourses().size());
+            });
         };
     }
 
